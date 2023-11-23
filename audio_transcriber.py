@@ -81,10 +81,6 @@ def transcribe_yt(api_key, filename):
     else:
         st.error('Transcription failed or was not completed.')
 
-
-    # Print transcribed text
-    st.success(transcript_output_response.json().get("text"))
-
 if __name__ == "__main__":
     api_key = api_key  # Replace with your AssemblyAI API key
     uploaded_file = st.file_uploader("Choose a local audio file", type=["mp3", "wav", "ogg"])
