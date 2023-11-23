@@ -85,7 +85,7 @@ def transcribe_yt(api_key, filename):
 
 if __name__ == "__main__":
     api_key = api_key  # Replace with your AssemblyAI API key
-    uploaded_file = st.file_uploader("Choose a local audio file", type=["mp3", "wav", "ogg"])
+    uploaded_file = st.file_uploader("Choose a local audio file", type=["mp3", "wav", "ogg", "aac"])
 
     if uploaded_file is not None:
         transcribe_yt(api_key, uploaded_file)
