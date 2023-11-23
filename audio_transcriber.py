@@ -63,7 +63,7 @@ def transcribe_yt(api_key, filename):
     transcript_id = transcript_input_response.json().get("id")
     bar.progress(60)
 
-    # Retrieve transcription results
+   # Retrieve transcription results
     st.markdown("### Retrieving Transcription Results")
     # st.subheader("Retrieving Transcription Results")
     endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
@@ -71,7 +71,8 @@ def transcribe_yt(api_key, filename):
 
     # Check if transcription is complete
     while transcript_output_response.json().get('status') != 'completed':
-        st.warning('Transcription is processing ...')
+        # Remove the line below if you don't want the warning message
+        # st.warning('Transcription is processing ...')
         transcript_output_response = requests.get(endpoint, headers=headers)
 
     # Print transcribed text when complete
@@ -80,6 +81,7 @@ def transcribe_yt(api_key, filename):
         st.success(transcript_output_response.json().get("text"))
     else:
         st.error('Transcription failed or was not completed.')
+
 
 if __name__ == "__main__":
     api_key = api_key  # Replace with your AssemblyAI API key
