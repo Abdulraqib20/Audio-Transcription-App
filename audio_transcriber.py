@@ -3,6 +3,7 @@ import assemblyai as aai
 from configure import api_key
 import os
 import requests
+import io
 
 # Center-align subheading and image using HTML <div> tags
 st.markdown(
