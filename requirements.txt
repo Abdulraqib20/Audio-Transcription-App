@@ -1,2 +1,2 @@
 streamlit
-assemblyai
+assemblyai == 0.20.0
