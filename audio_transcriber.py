@@ -77,7 +77,9 @@ def transcribe_audio(api_key, audio_path):
     bar.progress(60)
 
     # Retrieve transcription results
-    st.markdown("#### Retrieving Transcription Results...")
+    loading_spinner = st.spinner("Retrieving Transcription Results...")
+    loading_spinner.start()
+
     endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
     transcript_output_response = requests.get(endpoint, headers=headers)
 
@@ -94,6 +96,8 @@ def transcribe_audio(api_key, audio_path):
     else:
         st.error('Transcription failed or was not completed.')
         return None
+    
+    loading_spinner.stop()
 
 def read_file(file_object, chunk_size=5242880):
     # Read file content in chunks
