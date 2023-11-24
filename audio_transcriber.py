@@ -10,6 +10,7 @@ import io
 # Create a Streamlit app
 st.set_page_config(
     page_title="Raqib's Audio Transcription App",
+    page_icon="voice.png",
     layout="wide",
 )
 
