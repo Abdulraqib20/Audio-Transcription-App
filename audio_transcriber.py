@@ -75,10 +75,6 @@ def transcribe_audio(api_key, audio_path):
     # Extract transcript ID
     transcript_id = transcript_input_response.json().get("id")
     bar.progress(60)
-
-    # Retrieve transcription results
-    st.spinner("Retrieving Transcription Results...")
-
     endpoint = f"https://api.assemblyai.com/v2/transcript/{transcript_id}"
     transcript_output_response = requests.get(endpoint, headers=headers)
 
