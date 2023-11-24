@@ -18,7 +18,6 @@ st.markdown(
     """
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h1>Audio & Recording Transcription App</h1>
-        <img src="james-kovin-F2h_WbKnX4o-unsplash (1).jpg" style="width: 70%; margin-top: 10px;">
     </div>
     """,
     unsafe_allow_html=True
